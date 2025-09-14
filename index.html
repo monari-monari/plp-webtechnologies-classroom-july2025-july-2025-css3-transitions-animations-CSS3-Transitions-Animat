@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriMeal Planner - Interactive</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-btn">Dark Mode</button>
+
+    <div class="container">
+        <header class="header">
+            <h1>AfriMeal Planner</h1>
+            <p>Eat Right! The Afican Way!</p>
+        </header>
+
+        <nav class="nav">
+            <button class="nav-btn active" data-section="home"> Home</button>
+            <button class="nav-btn" data-section="recipes"> Recipes</button>
+            <button class="nav-btn" data-section="planner"> Planner</button>
+            <button class="nav-btn" data-section="contact"> Contact</button>
+        </nav>
+
+        <section id="home" class="content-section active">
+            <main class="main">
+                <h2>Popular African Dishes</h2>
+                <div class="recipe-grid">
+                    <div class="recipe-card">
+                        <h3> Ugali</h3>
+                        <p>East African maize meal staple</p>
+                        <span class="time"> 30 mins</span>
+                        <button class="recipe-btn" data-recipe="ugali">View Recipe</button>
+                    </div>
+                    
+                    <div class="recipe-card">
+                        <h3> Jollof Rice</h3>
+                        <p>West African favorite with spices</p>
+                        <span class="time"> 45 mins</span>
+                        <button class="recipe-btn" data-recipe="jollof">View Recipe</button>
+                    </div>
+                    
+                    <div class="recipe-card">
+                        <h3> Injera</h3>
+                        <p>Ethiopian flatbread</p>
+                        <span class="time"> 3 days</span>
+                        <button class="recipe-btn" data-recipe="injera">View Recipe</button>
+                    </div>
+                    
+                    <div class="recipe-card">
+                        <h3> Biltong</h3>
+                        <p>South African dried meat</p>
+                        <span class="time"> 5 days</span>
+                        <button class="recipe-btn" data-recipe="biltong">View Recipe</button>
+                    </div>
+                </div>
+
+                <div class="faq-section">
+                    <h2>Meal Planning Tips</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How do I start meal planning? 
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Plan your meals on Sunday for the whole week. Write down what you want to eat each day.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What should I buy at the store? 
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Make a shopping list based on your meal plan. Include all ingredients you need for the week.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How can I save time cooking? 
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Prep vegetables on weekends. Cook rice and meat in big batches to use during the week.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <aside class="sidebar">
+                <h3>Meal Counter</h3>
+                <div class="counter-section">
+                    <div class="counter-display">
+                        <span id="meal-counter">0</span>
+                        <p>Meals Planned</p>
+                    </div>
+                    <div class="counter-buttons">
+                        <button id="decrease-btn" class="btn btn-red">➖</button>
+                        <button id="reset-btn" class="btn btn-gray">Reset</button>
+                        <button id="increase-btn" class="btn btn-green">➕</button>
+                    </div>
+                    <p id="counter-message"></p>
+                </div>
+                
+                <h3>Quick Links</h3>
+                <ul class="cuisine-list">
+                    <li>🇳🇬 Nigerian Recipes</li>
+                    <li>🇪🇹 Ethiopian Dishes</li>
+                    <li>🇲🇦 Moroccan Food</li>
+                    <li>🇿🇦 South African Meals</li>
+                    <li>🇰🇪 Kenyan Recipes</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section id="recipes" class="content-section">
+            <div class="recipe-details">
+                <h2>Recipe Details</h2>
+    
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="ingredients"> Ingredients</button>
+                    <button class="tab-btn" data-tab="steps"> Steps</button>
+                    <button class="tab-btn" data-tab="nutrition"> Nutrition</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div id="ingredients" class="tab-panel active">
+                        <h3>Ingredients</h3>
+                        <p id="ingredients-text">Click on a recipe from the home page to see ingredients.</p>
+                    </div>
+                    
+                    <div id="steps" class="tab-panel">
+                        <h3>Cooking Steps</h3>
+                        <p id="steps-text">Click on a recipe from the home page to see cooking steps.</p>
+                    </div>
+                    
+                    <div id="nutrition" class="tab-panel">
+                        <h3>Nutrition Info</h3>
+                        <p id="nutrition-text">Click on a recipe from the home page to see nutrition facts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="planner" class="content-section">
+            <div class="planner">
+                <h2>Weekly Meal Planner</h2>
+                
+                <div class="days-grid">
+                    <div class="day-card">
+                        <h3>Monday</h3>
+                        <div class="meal-slot" data-meal="breakfast">
+                            <strong>Breakfast:</strong> <span>Click to add</span>
+                        </div>
+                        <div class="meal-slot" data-meal="lunch">
+                            <strong>Lunch:</strong> <span>Click to add</span>
+                        </div>
+                        <div class="meal-slot" data-meal="dinner">
+                            <strong>Dinner:</strong> <span>Click to add</span>
+                        </div>
+                    </div>
+                    
+                    <div class="day-card">
+                        <h3>Tuesday</h3>
+                        <div class="meal-slot" data-meal="breakfast">
+                            <strong>Breakfast:</strong> <span>Click to add</span>
+                        </div>
+                        <div class="meal-slot" data-meal="lunch">
+                            <strong>Lunch:</strong> <span>Click to add</span>
+                        </div>
+                        <div class="meal-slot" data-meal="dinner">
+                            <strong>Dinner:</strong> <span>Click to add</span>
+                        </div>
+                    </div>
+                    
+                    <div class="day-card">
+                        <h3>Wednesday</h3>
+                        <div class="meal-slot" data-meal="breakfast">
+                            <strong>Breakfast:</strong> <span>Click to add</span>
+                        </div>
+                        <div class="meal-slot" data-meal="lunch">
+                            <strong>Lunch:</strong> <span>Click to add</span>
+                        </div>
+                        <div class="meal-slot" data-meal="dinner">
+                            <strong>Dinner:</strong> <span>Click to add</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="meal-options">
+                    <h3>Choose a Meal</h3>
+                    <button class="meal-btn" data-meal="Jollof Rice"> Jollof Rice</button>
+                    <button class="meal-btn" data-meal="Ugali"> Ugali</button>
+                    <button class="meal-btn" data-meal="Injera"> Injera</button>
+                    <button class="meal-btn" data-meal="Biltong"> Biltong</button>
+                </div>
+                
+                <p id="planner-message"></p>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <div class="contact-section">
+                <h2>Contact Us</h2>
+                
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name">
+                        <span class="error" id="name-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                        <span class="error" id="email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone (optional):</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+                        <span class="error" id="phone-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="favorite-cuisine">Favorite African Cuisine:</label>
+                        <select id="favorite-cuisine" name="favorite-cuisine">
+                            <option value="">Choose one</option>
+                            <option value="west-african">West African</option>
+                            <option value="east-african">East African</option>
+                            <option value="north-african">North African</option>
+                            <option value="south-african">Southern African</option>
+                        </select>
+                        <span class="error" id="cuisine-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your meal planning needs..."></textarea>
+                        <span class="error" id="message-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            Send me weekly meal planning tips
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" name="terms">
+                            I agree to the terms and conditions
+                        </label>
+                        <span class="error" id="terms-error"></span>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+
+                <div id="success-message" class="success-box hidden">
+                    <h3> Message Sent!</h3>
+                    <p>Thank you! We'll get back to you soon with meal planning tips.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2025 AfriMeal Planner</p>
+        </footer>
+    </div>
+
+</div>
+
+<!--  Modal Example (JS triggers CSS animation) -->
+<div id="info-modal" class="modal hidden">
+  <div class="modal-content">
+    <span id="close-modal" class="close-btn">&times;</span>
+    <h2>Welcome to AfriMeal Planner!</h2>
+    <p>AfriMeal Planner is a smart nutrition app designed for Africans, by Africans. Track your daily calories & macros with easy visual progress.Discover personalized recipes using local ingredients and regional cuisines. Get meal recommendations tailored to your goals, lifestyle, and culture. Perfect for health-conscious Millennials, Gen Z, fitness enthusiasts, and families who want to eat healthier without losing touch with their heritage. Goal: Empower Africa to fight rising obesity while celebrating its rich food traditions.</p>
+  </div>
+</div>
+<button id="open-modal" class="modal-trigger-btn">Show Info Modal</button>
+
+<!-- Assignment: All CSS is in style.css, all JS is in script.js. Comments in those files explain assignment parts. -->
+<script src="script.js"></script>
+</body>
+</html>
